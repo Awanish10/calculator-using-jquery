@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The clculater</title>
+	<style type="text/css">
+		input {
+    width: 47px;
+    height: 56px;
+     font-size: large;
+}
+#in {
+    width: 254px !important;
+}
+		
+	</style>
+</head>
+<body>
+	<div>
+		<b id ="b1" style="background-color: #cdd3d5; font-size: 23px; margin-left: 632px; border-radius:25px; display: none;" onclick="show()">ON</b>
+	</div>
+	<div class="main" align="center">
+		
+		<table border="1">
+			<tr>
+				<td colspan="5">
+					<input type="text" name="" id="in">
+				</td>
+			</tr>
+			<tr>
+				<td><input type="button" name="" value="OFF" onclick="offOn()"></td>
+				<td><input type="button" name="" value="+/-" onclick="inse('')"></td>
+				<td><input type="button" name="" value="√" onclick="inse('')"></td>
+				<td><input type="button" name="" value="GT" onclick="inse('')"></td>
+				<td><input type="button" name="" value="÷" onclick="inse('/')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" name="" value="→" onclick="inse('')"></td>
+				<td><input type="button" name="" value="7" onclick="inse('7')"></td>
+				<td><input type="button" name="" value="8" onclick="inse('8')"></td>
+				<td><input type="button" name="" value="9" onclick="inse('9')"></td>
+				<td><input type="button" name="" value="×" onclick="inse('*')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" name="" value="%" onclick="inse('')"></td>
+				<td><input type="button" value="4" onclick="inse('4')"></td>
+				<td><input type="button" value="5" onclick="inse('5')"></td>
+				<td><input type="button" value="6" onclick="inse('6')"></td>
+				<td><input type="button" value="- " onclick="inse('-')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="CE" onclick="ce()"></td>
+				<td><input type="button" value="1" onclick="inse('1')"></td>
+				<td><input type="button" value="2" onclick="inse('2')"></td>
+				<td><input type="button" value="3" onclick="inse('3')"></td>
+				<td><input type="button" value="+" onclick="inse('+')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="AC" onclick="ac()"></td>
+				<td><input type="button" value="0" onclick="inse('0')"></td>
+				<td><input type="button" value="." onclick="inse('.')"></td>
+				<td colspan="2"><input type="button" value="=" style="width: 100px;" onclick="equal()"></td>
+				<!-- <td><input type="button" value="+"></td> -->
+			</tr>
+		</table>
+	</div>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		function inse(data)
+		{
+			 x = $("#in").val();
+			 x += data;
+
+			$("#in").val(x);
+		}
+		function equal()
+		{
+			var numb = $("#in").val();
+			evaladd = eval(numb); 
+			$("#in").val(evaladd);
+		}
+		function ce()
+		{
+			$("#in").val("");
+
+		}
+
+		function offOn()
+		{
+			$(":input").hide();
+			
+			$("#b1").show();
+		}
+		function show()
+		{
+			$(":input").show();
+			$("#b1").hide();
+		}
+
+	</script>
+</body>
+</html>
